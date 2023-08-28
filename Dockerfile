@@ -1,6 +1,6 @@
 FROM ghost:5.60-alpine as ghos3
 RUN apk add g++ make python3
-# RUN su-exec node yarn add ghos3
+RUN su-exec node yarn add ghos3
 # create a new folder for the adapter
 RUN mkdir -p $GHOST_INSTALL/content/adapters/storage/s3
 
