@@ -3,8 +3,6 @@ RUN apk add g++ make python3
 # RUN su-exec node yarn add ghos3
 # create a new folder for the adapter
 RUN mkdir -p $GHOST_INSTALL/content/adapters/storage/s3
-# copy the adapter into the new folder
-COPY --chown=node:node ./ghos3 $GHOST_INSTALL/content/adapters/storage/s3
 
 FROM ghost:5.60-alpine
 COPY --chown=node:node --from=ghos3 $GHOST_INSTALL/node_modules $GHOST_INSTALL/node_modules
